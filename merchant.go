@@ -1,6 +1,10 @@
 package types
 
-import "github.com/jinzhu/gorm"
+import (
+	"fmt"
+
+	"github.com/jinzhu/gorm"
+)
 
 // Merchant
 type Merchant struct {
@@ -27,4 +31,10 @@ type Merchant struct {
 func (Merchant) TableName() string {
 	return "merchant_info"
 }
+
+
+func SayHello(){
+    fmt.Println("Hello From package")
+}
+
 
