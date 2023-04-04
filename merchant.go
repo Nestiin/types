@@ -32,9 +32,12 @@ func (Merchant) TableName() string {
 	return "merchant_info"
 }
 
+// Login request
+type LoginRequest struct {
+	UserName string `json:"username"`
+	Password string `json:"password"`
+}
 
 func SayHello(){
     fmt.Println("Hello From package")
 }
-
-
