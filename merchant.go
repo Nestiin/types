@@ -9,8 +9,8 @@ import (
 // Merchant
 type Merchant struct {
 	gorm.Model
-	MerchantName       string `json:"name" gorm:"type:varchar(250);column:merchant_name"`
-	MerchantCode       string `json:"code" gorm:"type:varchar(50);column:merchant_code"`
+	Name               string `json:"name" gorm:"type:varchar(250);column:merchant_name"`
+	Code               string `json:"code" gorm:"type:varchar(50);column:merchant_code"`
 	ContactName        string `json:"contact" gorm:"type:varchar(15);column:contact_name"`
 	PhoneNo            string `json:"phone" gorm:"type:varchar(50);column:phone_no"`
 	Email              string `json:"email" gorm:"type:varchar(255);column:email"`
@@ -38,6 +38,6 @@ type LoginRequest struct {
 	Password string `json:"password"`
 }
 
-func SayHello(){
-    fmt.Println("Hello From package")
+func SayHello() {
+	fmt.Println("Hello From package")
 }
