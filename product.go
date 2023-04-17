@@ -18,7 +18,6 @@ type Product struct {
 	Thumbnail     postgres.Jsonb       `json:"thumbnail,omitempty" gorm:"type:json;column:thumbnail"`
 	Images        postgres.Jsonb       `json:"images,omitempty" gorm:"type:jsonb;column:images"`
 	IsFragile     bool                 `json:"isFragile,omitempty" gorm:"type:bool;column:is_fragile"`
-	Category      ProductCategory      `json:"category,omitempty" gorm:"reference:id"`
 	UOMID         int                  `json:"uomID,omitempty" gorm:"type:int;column:UOM_id"`
 	Gender        string               `json:"gender,omitempty" gorm:"type:varchar(100);column:gender"`
 	AgeGroup      string               `json:"ageGroup,omitempty" gorm:"type:varchar(50);column:age_group"`
