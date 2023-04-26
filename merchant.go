@@ -25,7 +25,6 @@ type Merchant struct {
 	GSTNumber         string `json:"gstNumber,omitempty" gorm:"type:varchar(20);column:gst_number"`
 	Password          string `json:"password,omitempty" gorm:"type:varchar(50);column:password"`
 	PhoneNo           string `json:"phoneNo,omitempty" gorm:"type:varchar(13);column:phone_no"`
-	IsAdminVerified   bool   `json:"isAdminVerified,omitempty" gorm:"column:is_admin_verified"`
 	Status            string `json:"status,omitempty" gorm:"type:varchar(25);column:status"`
 	RegistrationStage int    `json:"registrationStage,omitempty" gorm:"type:int;column:registration_stage"`
 	IsTokenVerified   bool   `json:"isTokenVerified,omitempty" gorm:"type:boolean;column:is_token_verified"`
