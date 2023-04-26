@@ -47,3 +47,27 @@ type LoginRequest struct {
 func SayHello() {
 	fmt.Println("Hello From package")
 }
+
+type MerchantAddress struct {
+	gorm.Model
+	Code                string `json:"code,omitempty" gorm:"type:int;column:merchant_code"`
+	AddressCode         string `json:"addressCode,omitempty" gorm:"type:varchar(50);column:address_code"`
+	DoorNo              string `json:"doorNo,omitempty" gorm:"type:varchar(10);column:door_no"`
+	BuildingName        string `json:"buildingName,omitempty" gorm:"type:varchar(80);column:building_name"`
+	Street              string `json:"street,omitempty" gorm:"type:varchar(80);column:street"`
+	City                string `json:"city,omitempty" gorm:"type:varchar(30);column:city"`
+	State               string `json:"state,omitempty" gorm:"type:varchar(30);column:state"`
+	Country             string `json:"country,omitempty" gorm:"type:varchar(30);column:country"`
+	PickUpLocation      string `json:"pickUpLocation,omitempty" gorm:"type:varchar(10);column:pickup_location"`
+	PostalCode          string `json:"postalCode,omitempty" gorm:"type:varchar(10);column:postal_code"`
+	IsActive            bool   `json:"isActive,omitempty" gorm:"type:bool;column:isactive"`
+	BranchName          string `json:"branchName,omitempty" gorm:"type:varchar(250);column:branch_name;uniqueIndex"`
+	ContactPersonName   string `json:"contactPerson,omitempty" gorm:"type:varchar(250);column:contact_person_name"`
+	ContactPersonNumber string `json:"contactPersonNo,omitempty" gorm:"type:varchar(250);column:contact_person_number"`
+	CreatedBy           string `json:"createdBy,omitempty" gorm:"type:varchar(50);column:created_by"`
+	UpdatedBy           string `json:"updatedBy,omitempty" gorm:"type:varchar(50);column:updated_by"`
+}
+
+func (MerchantAddress) TableName() string {
+	return "merchant_address"
+}
