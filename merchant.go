@@ -60,7 +60,7 @@ type MerchantAddress struct {
 	Country             string `json:"country,omitempty" gorm:"type:varchar(30);column:country"`
 	PickUpLocation      string `json:"pickUpLocation,omitempty" gorm:"type:varchar(10);column:pickup_location"`
 	PostalCode          string `json:"postalCode,omitempty" gorm:"type:varchar(10);column:postal_code"`
-	Status              string `json:"status,omitempty" gorm:"type:bool;column:status"`
+	Status              string `json:"status,omitempty" gorm:"type:varchar(30);column:status"`
 	BranchName          string `json:"branchName,omitempty" gorm:"type:varchar(250);column:branch_name;uniqueIndex"`
 	ContactPersonName   string `json:"contactPerson,omitempty" gorm:"type:varchar(250);column:contact_person_name"`
 	ContactPersonNumber string `json:"contactPersonNo,omitempty" gorm:"type:varchar(250);column:contact_person_number"`
