@@ -10,7 +10,7 @@ import (
 
 
 // Merchant
-type MerchantInfo struct {
+type Merchant struct {
 	gorm.Model
 	Name               string `json:"name,omitempty" gorm:"type:varchar(250);column:merchant_name"`
 	Code               string `json:"code,omitempty" gorm:"type:varchar(50);column:merchant_code"`
@@ -37,7 +37,7 @@ type MerchantInfo struct {
 	RegisterBy         string `json:"registerBy,omitempty" gorm:"-"`
 }
 
-func (MerchantInfo) TableName() string {
+func (Merchant) TableName() string {
 	return "merchant_info"
 }
 
