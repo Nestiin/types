@@ -34,7 +34,9 @@ type Merchant struct {
 	Role               string `json:"role,omitempty" gorm:"type:varchar(10);column:role"`
 	Token              string `json:"token,omitempty" gorm:"type:varchar(20);column:token"`
 	Reason             string `json:"reason,omitempty" gorm:"type:varchar(250);column:reason"`
-	RegisterBy         string `json:"registerBy,omitempty" gorm:"-"`
+	Address          []MerchantAddress `json:"address,omitempty" gorm:"-"`
+    RegisterBy         string `json:"registerBy,omitempty" gorm:"-"`
+
 }
 
 func (Merchant) TableName() string {
