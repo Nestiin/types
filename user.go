@@ -23,3 +23,24 @@ type User struct {
 func (User) TableName() string {
 	return "user_info"
 }
+
+// user address global struct model
+type UserAddress struct {
+	gorm.Model
+	Id           int    `json:"id,omitempty"`
+	UserId       uint   `json:"userId,omitempty" gorm:"type:bigserial;column:user_id"`
+	AddressName  string `json:"addressName,omitempty" gorm:"type:varchar(50);column:address_name"`
+	BlockNo      string `json:"blockNo,omitempty" gorm:"type:varchar(50);column:block_number"`
+	Street       string `json:"street,omitempty" gorm:"type:varchar(50);column:street"`
+	ApartmentNo  string `json:"apartmentNo,omitempty" gorm:"type:varchar(50);column:apartment_number"`
+	BuildingName string `json:"buildingName,omitempty" gorm:"type:varchar(50);column:building_name"`
+	Town         string `json:"town,omitempty" gorm:"type:varchar(50);column:town"`
+	PostalCode   string `json:"postalCode,omitempty" gorm:"type:varchar(15);column:post_code"`
+	State        string `json:"state,omitempty" gorm:"type:varchar(50);column:state"`
+	Country      string `json:"country,omitempty" gorm:"type:varchar(50);column:country"`
+	IsPrimary    bool   `json:"isPrimary,omitempty" gorm:"type:boolean;column:is_primary"`
+}
+
+func (UserAddress) TableName() string {
+	return "user_address"
+}
