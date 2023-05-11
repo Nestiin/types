@@ -37,6 +37,7 @@ type UserAddress struct {
 	PostalCode   string `json:"postalCode,omitempty" gorm:"type:varchar(15);column:post_code"`
 	State        string `json:"state,omitempty" gorm:"type:varchar(50);column:state"`
 	Country      string `json:"country,omitempty" gorm:"type:varchar(50);column:country"`
+	Status       string `json:"status,omitempty" gorm:"type:varchar(50);column:status"`
 	IsPrimary    bool   `json:"isPrimary,omitempty" gorm:"type:boolean;column:is_primary"`
 }
 
