@@ -27,7 +27,6 @@ func (User) TableName() string {
 // user address global struct model
 type UserAddress struct {
 	gorm.Model
-	Id           int    `json:"id,omitempty"`
 	UserId       uint   `json:"userId,omitempty" gorm:"type:bigserial;column:user_id"`
 	AddressName  string `json:"addressName,omitempty" gorm:"type:varchar(50);column:address_name"`
 	BlockNo      string `json:"blockNo,omitempty" gorm:"type:varchar(50);column:block_number"`
