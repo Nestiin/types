@@ -13,6 +13,10 @@ type AddToCart struct {
 	UserID    int            `json:"userId" gorm:"type:int;column:user_id"`
 }
 
+func (AddToCart) TableName() string {
+	return "cart_info"
+}
+
 type ProductDetails struct {
 	ProductID int    `json:"productId" validate:"required"`
 	Quantity  int    `json:"quantity" validate:"required"`
