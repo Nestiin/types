@@ -7,8 +7,8 @@ import (
 
 type WishListReq struct {
 	gorm.Model
-	UserID  int            `json:"user_id" validate:"required"`
-	Product postgres.Jsonb `json:"product" validate:"required"`
+	UserID  int            `json:"user_id" gorm:"type:int;column:user_id" validate:"required"`
+	Product postgres.Jsonb `json:"product" gorm:"type:json;column:product" validate:"required"`
 }
 
 func (WishListReq) TableName() string {
