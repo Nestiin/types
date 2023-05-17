@@ -10,3 +10,7 @@ type WishListReq struct {
 	UserID  int            `json:"user_id" validate:"required"`
 	Product postgres.Jsonb `json:"product" validate:"required"`
 }
+
+func (WishListReq) TableName() string {
+	return "wishlist_info"
+}
