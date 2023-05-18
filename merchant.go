@@ -45,7 +45,7 @@ type LoginRequest struct {
 	Password string `json:"password"`
 }
 
-type TokenPhoneRequest struct {
+type MerchantOtpValidation struct {
 	Username string `json:"username"`
 	Token    string `json:"token" validate:"required,min=4,max=6,alphanum"`
 	Method   string `json:"method"`
