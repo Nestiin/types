@@ -31,3 +31,36 @@ type AdminLoginReq struct {
 	Username string `json:"username" validate:"required"`
 	Password string `json:"password" validate:"required"`
 }
+
+type MemberRole struct {
+	gorm.Model
+	MemberRoleCode   string `gorm:"type:varchar(50);column:member_role_code"`
+	RoleID           uint   `gorm:"type:int;column:role_id"`
+	MemberCode       string `gorm:"type:varchar(50);column:member_code"`
+	IsActive         bool   `gorm:"type:varchar;column:is_active"`
+	CreatePermission bool   `gorm:"type:varchar;column:create_permission"`
+	UpdatePermission bool   `gorm:"type:varchar;column:update_permission"`
+	ReadPermission   bool   `gorm:"type:varchar;column:read_permission"`
+	DeletePermission bool   `gorm:"type:varchar;column:delete_permission"`
+	CreatedBy        string `gorm:"type:varchar(50);column:created_by"`
+	UpdatedBy        string `gorm:"type:varchar(50);column:updated_by"`
+	Role             Role   `gorm:"references:id"`
+}
+
+func (MemberRole) TableName() string {
+	return "member_role"
+}
+
+type Role struct {
+	gorm.Model
+	RoleCode    string `gorm:"type:varchar(50);column:role_code"`
+	RoleName    string `gorm:"type:varchar(50);column:role_name"`
+	IsActive    bool   `gorm:"type:varchar;column:is_active"`
+	Permissions string `gorm:"type:text;column:permissions"`
+	CreatedBy   string `gorm:"type:varchar(50);column:created_by"`
+	UpdatedBy   string `gorm:"type:varchar(50);column:updated_by"`
+}
+
+func (Role) TableName() string {
+	return "role"
+}
