@@ -4,7 +4,7 @@ import "github.com/jinzhu/gorm"
 
 type AdminRegister struct {
 	gorm.Model
-	AdminCode        string ` gorm:"type:varchar(50);column:admin_code"`
+	AdminCode        string `json:"admin_code" gorm:"type:varchar(50);column:admin_code"`
 	FirstName        string `json:"first_name" gorm:"type:varchar(45);column:first_name"`
 	LastName         string `json:"last_name" gorm:"type:varchar(45);column:last_name"`
 	RoleID           uint   `json:"role_id" gorm:"type:int;column:role_id"`
