@@ -15,10 +15,10 @@ type AdminRegister struct {
 	IsFirstTimeLogin bool   `json:"is_first_time_login" gorm:"type:boolean;column:is_first_time_login"`
 	IsTokenVerified  bool   `json:"is_token_verified" gorm:"type:boolean;column:is_token_verified"`
 	IsActive         bool   `json:"is_active" gorm:"type:varchar;column:is_active"`
-	CreatePermission bool   `json:"create_permission" gorm:"type:varchar;column:create_permission"`
-	UpdatePermission bool   `json:"update_permission" gorm:"type:varchar;column:update_permission"`
-	ReadPermission   bool   `json:"read_permission" gorm:"type:varchar;column:read_permission"`
-	DeletePermission bool   `json:"delete_permission" gorm:"type:varchar;column:delete_permission"`
+	CreatePermission bool   `json:"create_permission" gorm:"-"`
+	UpdatePermission bool   `json:"update_permission" gorm:"-"`
+	ReadPermission   bool   `json:"read_permission" gorm:"-"`
+	DeletePermission bool   `json:"delete_permission" gorm:"-"`
 	CreatedBy        string `json:"created_by" gorm:"type:varchar(50);column:created_by"`
 	UpdatedBy        string `json:"updated_by" gorm:"type:varchar(50);column:updated_by"`
 }
