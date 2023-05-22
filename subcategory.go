@@ -10,6 +10,8 @@ type ProductSubCategory struct {
 	Status      string `json:"status,omitempty" gorm:"type:varchar(20);column:status"`
 	CategoryID  uint   `json:"categoryID,omitempty" gorm:"type:integer;column:category_id"`
 	CreatedBy   string `json:"createdBy,omitempty" gorm:"type:integer;column:created_by"`
+	UpdatedBy   string `json:"updatedBy,omitempty" gorm:"type:varchar(50);colum:updated_by"`
+
 }
 
 func (ProductSubCategory) TableName() string {
