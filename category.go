@@ -10,7 +10,7 @@ type ProductCategory struct {
 	TypeID      int    `json:"typeID,omitempty" gorm:"type:int;column:type_id"`
 	Status      string `json:"status,omitempty" gorm:"type:varchar(15);column:status"`
 	CreatedBy   string `json:"createdBy,omitempty" gorm:"type:integer;column:created_by"`
-	UpdatedBy   string `json:"updatedBy,omitempty" gorm:"type:varchar(50);colum:updated_by"`
+	UpdatedBy   string `json:"updatedBy,omitempty" gorm:"type:varchar(50);column:updated_by"`
 }
 
 func (ProductCategory) TableName() string {
