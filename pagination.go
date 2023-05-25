@@ -1,7 +1,7 @@
 package types
 
 type Pagination struct {
-	Page          int         `json:"page"`
+	Page          int         `json:"pageNo"`
 	NumElements   int         `json:"numElements"`
 	PageSize      int         `json:"pageSize"`
 	TotalPages    int         `json:"totalPages"`
