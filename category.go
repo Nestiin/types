@@ -16,3 +16,8 @@ type ProductCategory struct {
 func (ProductCategory) TableName() string {
 	return "product_category"
 }
+
+type ProductCategoryAndSubCategory struct {
+	ProductCategory
+	Subcategories []ProductSubCategory `gorm:"foreignKey:category_id"`
+}
