@@ -44,3 +44,15 @@ type UserAddress struct {
 func (UserAddress) TableName() string {
 	return "user_address"
 }
+
+type TokenPhoneRequest struct {
+	EmailOrPhone string `json:"email_or_phone"`
+	Otp          string `json:"otp" validate:"required,min=4,max=6,alphanum"`
+	Method       string `json:"method"`
+}
+
+type UpdateUserLog struct {
+	gorm.Model
+	Action  string `gorm:"type:varchar(256);column:action"`
+	User_id uint   `gorm:"type:varchar(50);column:user_id"`
+}
