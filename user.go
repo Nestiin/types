@@ -60,3 +60,7 @@ type UpdateUserLog struct {
 func (UpdateUserLog) TableName() string {
 	return "user_log"
 }
+
+type ForgotPasswordReq struct {
+	UserName string `json:"username"`
+}
