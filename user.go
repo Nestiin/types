@@ -56,3 +56,7 @@ type UpdateUserLog struct {
 	Action  string `gorm:"type:varchar(256);column:action"`
 	User_id uint   `gorm:"type:varchar(50);column:user_id"`
 }
+
+func (UpdateUserLog) TableName() string {
+	return "user_log"
+}
