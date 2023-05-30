@@ -64,3 +64,10 @@ func (UpdateUserLog) TableName() string {
 type ForgotPasswordReq struct {
 	UserName string `json:"username"`
 }
+
+type NewPasswordRequest struct {
+	UserName        string `json:"username"`
+	OTP             string `json:"otp"`
+	NewPassword     string `json:"new_password"`
+	ConfirmPassword string `json:"confirm_password"`
+}
