@@ -33,3 +33,10 @@ type Product struct {
 func (Product) TableName() string {
 	return "product_info"
 }
+
+type Image struct {
+	Caption string `json:"caption"`
+	URL     string `json:"url"`
+	Height  string `json:"height"`
+	Width   string `json:"width"`
+}
