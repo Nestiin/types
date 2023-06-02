@@ -2,7 +2,6 @@ package types
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/jinzhu/gorm/dialects/postgres"
 )
 
 // Product
@@ -15,8 +14,8 @@ type Product struct {
 	TypeID        uint                 `json:"typeId,omitempty" gorm:"type:int;column:type_id"`
 	SubCategoryID uint                 `json:"subCategoryId,omitempty" gorm:"type:int;column:subcategory_id"`
 	Description   string               `json:"description,omitempty" gorm:"type:varchar(1000);column:description"`
-	Thumbnail     postgres.Jsonb       `json:"thumbnail,omitempty" gorm:"type:json;column:thumbnail"`
-	Images        postgres.Jsonb       `json:"images,omitempty" gorm:"type:jsonb;column:images"`
+	Thumbnail     Image                `json:"thumbnail,omitempty" gorm:"-"`
+	Images        []Image              `json:"images,omitempty" gorm:"-"`
 	IsFragile     bool                 `json:"isFragile,omitempty" gorm:"type:bool;column:is_fragile"`
 	UOMID         int                  `json:"uomID,omitempty" gorm:"type:int;column:UOM_id"`
 	Gender        string               `json:"gender,omitempty" gorm:"type:varchar(100);column:gender"`
