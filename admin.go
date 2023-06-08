@@ -66,11 +66,11 @@ func (Role) TableName() string {
 }
 
 type UpdatePermission struct {
-	RoleID           uint `json:"roleId" gorm:"type:integer;column:role_id"`
-	MemberRoleID     uint `json:"id" validate:"required" gorm:"type:integer;column:member_role_id"`
-	Status           bool `json:"status" validate:"required" gorm:"type:bool;column:status"`
-	CreatePermission bool `json:"createPermission" gorm:"type:bool;column:create_permission"`
-	UpdatePermission bool `json:"updatePermission" gorm:"type:bool;column:update_permission"`
-	ReadPermission   bool `json:"readPermission" gorm:"type:bool;column:read_permission"`
-	DeletePermission bool `json:"deletePermission" gorm:"type:bool;column:delete_permission"`
+	RoleID           uint   `json:"roleId" gorm:"type:integer;column:role_id"`
+	MemberRoleID     uint   `json:"id" validate:"required" gorm:"type:integer;column:member_role_id"`
+	Status           string `json:"status" validate:"required" gorm:"type:varchar(50);column:status"`
+	CreatePermission bool   `json:"createPermission" gorm:"type:bool;column:create_permission"`
+	UpdatePermission bool   `json:"updatePermission" gorm:"type:bool;column:update_permission"`
+	ReadPermission   bool   `json:"readPermission" gorm:"type:bool;column:read_permission"`
+	DeletePermission bool   `json:"deletePermission" gorm:"type:bool;column:delete_permission"`
 }
