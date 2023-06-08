@@ -53,12 +53,12 @@ func (MemberRole) TableName() string {
 
 type Role struct {
 	gorm.Model
-	RoleCode    string `gorm:"type:varchar(50);column:role_code"`
-	RoleName    string `gorm:"type:varchar(50);column:role_name"`
-	IsActive    bool   `gorm:"type:varchar;column:is_active"`
-	Permissions string `gorm:"type:text;column:permissions"`
-	CreatedBy   string `gorm:"type:varchar(50);column:created_by"`
-	UpdatedBy   string `gorm:"type:varchar(50);column:updated_by"`
+	RoleCode    string `json:"roleCode" gorm:"type:varchar(50);column:role_code"`
+	RoleName    string `json:"roleName" gorm:"type:varchar(50);column:role_name"`
+	Status      string `json:"status" gorm:"type:text;column:status"`
+	Permissions string `json:"permissions" gorm:"type:text;column:permissions"`
+	CreatedBy   string `json:"createdBy" gorm:"type:varchar(50);column:created_by"`
+	UpdatedBy   string `json:"updatedBy" gorm:"type:varchar(50);column:updated_by"`
 }
 
 func (Role) TableName() string {
