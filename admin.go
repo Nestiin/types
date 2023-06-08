@@ -37,7 +37,7 @@ type MemberRole struct {
 	MemberRoleCode   string `gorm:"type:varchar(50);column:member_role_code"`
 	RoleID           uint   `gorm:"type:int;column:role_id"`
 	MemberCode       string `gorm:"type:varchar(50);column:member_code"`
-	IsActive         bool   `gorm:"type:varchar;column:is_active"`
+	Status           string `gorm:"type:varchar;column:status"`
 	CreatePermission bool   `gorm:"type:varchar;column:create_permission"`
 	UpdatePermission bool   `gorm:"type:varchar;column:update_permission"`
 	ReadPermission   bool   `gorm:"type:varchar;column:read_permission"`
@@ -63,4 +63,14 @@ type Role struct {
 
 func (Role) TableName() string {
 	return "role"
+}
+
+type UpdatePermission struct {
+	RoleID           uint `json:"roleId" gorm:"type:integer;column:role_id"`
+	MemberRoleID     uint `json:"id" validate:"required" gorm:"type:integer;column:member_role_id"`
+	Status           bool `json:"status" validate:"required" gorm:"type:bool;column:status"`
+	CreatePermission bool `json:"createPermission" gorm:"type:bool;column:create_permission"`
+	UpdatePermission bool `json:"updatePermission" gorm:"type:bool;column:update_permission"`
+	ReadPermission   bool `json:"readPermission" gorm:"type:bool;column:read_permission"`
+	DeletePermission bool `json:"deletePermission" gorm:"type:bool;column:delete_permission"`
 }
