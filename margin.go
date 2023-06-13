@@ -8,7 +8,7 @@ type Margin struct {
 	Percentage int    `json:"percentage" gorm:"type:integer;column:percentage"`
 	MerchantID int    `json:"merchantID" gorm:"type:integer;column:merchant_id"`
 	Base       string `json:"base" gorm:"type:varchar;column:base"`
-	Status     string `json:"status" gorm:"type:varchar;column:is_active"`
+	Status     string `json:"status" gorm:"type:varchar;column:status"`
 }
 
 func (Margin) TableName() string {
