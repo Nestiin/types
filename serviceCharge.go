@@ -13,7 +13,7 @@ type ServiceCharge struct {
 	ProductTypeID     int    `json:"productTypeID" gorm:"type:integer;column:product_type_id"`
 	ProductCategoryID int    `json:"productCategoryID" gorm:"type:integer;column:product_category_id"`
 	ProductID         int    `json:"productID" gorm:"type:integer;column:product_id"`
-	Status            bool   `json:"status" gorm:"type:varchar(50);column:status"`
+	Status            string `json:"status" gorm:"type:varchar(50);column:status"`
 }
 
 func (ServiceCharge) TableName() string {
