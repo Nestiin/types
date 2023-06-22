@@ -74,3 +74,11 @@ type UpdatePermission struct {
 	ReadPermission   bool   `json:"readPermission" gorm:"type:bool;column:read_permission"`
 	DeletePermission bool   `json:"deletePermission" gorm:"type:bool;column:delete_permission"`
 }
+
+// Used to create new password
+type CreateNewPassword struct {
+	UserName        string `json:"username" validate:"required"`
+	OldPassword     string `json:"oldPassword"`
+	NewPassword     string `json:"newPassword" validate:"required"`
+	ConfirmPassword string `json:"confirmPassword" validate:"required"`
+}
