@@ -46,9 +46,9 @@ func (UserAddress) TableName() string {
 }
 
 type TokenPhoneRequest struct {
-	EmailOrPhone string `json:"email_or_phone"`
-	Otp          string `json:"otp" validate:"required,min=4,max=6,alphanum"`
-	Method       string `json:"method"`
+	Username string `json:"username"`
+	Otp      string `json:"otp" validate:"required,min=4,max=6,alphanum"`
+	Method   string `json:"method"`
 }
 
 type UpdateUserLog struct {
