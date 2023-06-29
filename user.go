@@ -68,6 +68,6 @@ type ForgotPasswordReq struct {
 type NewPasswordRequest struct {
 	UserName        string `json:"username"`
 	OTP             string `json:"otp"`
-	NewPassword     string `json:"new_password"`
-	ConfirmPassword string `json:"confirm_password"`
+	NewPassword     string `json:"newPassword"`
+	ConfirmPassword string `json:"confirmPassword"`
 }
