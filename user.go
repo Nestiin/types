@@ -16,7 +16,7 @@ type User struct {
 	DeliveryAddress string `json:"deliveryAddress" gorm:"type:varchar(2000);column:delivery_address"`
 	SocialMediaID   string `json:"socialMediaId" gorm:"type:varchar(100);column:social_media_id"`
 	SocialMediaType string `json:"socialMediaType" gorm:"type:varchar(100);column:social_media_type"`
-	Status          string `gorm:"type:varchar(50);column:status"`
+	Status          string `json:"status" gorm:"type:varchar(50);column:status"`
 	RegisterBy      string `json:"registerBy" gorm:"-"`
 }
 
