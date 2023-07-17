@@ -9,6 +9,7 @@ type Order struct {
 	PTID                 int    `json:"productTypeId" gorm:"type:int;column:product_type_id"`
 	PCID                 int    `json:"productCategoryId" gorm:"type:int;column:product_category_id"`
 	ProductID            int    `json:"productId" gorm:"type:int;column:product_id"`
+	VariantID            int    `json:"variantID" gorm:"type:int;column:variant_id"`
 	UOMID                int    `json:"uomId" gorm:"type:int;column:uom_id"`
 	OrderCode            string `json:"-" gorm:"type:varchar(50);column:order_code"`
 	UNITPRICE            int    `json:"unitPrice" gorm:"type:int;column:unit_price"`
